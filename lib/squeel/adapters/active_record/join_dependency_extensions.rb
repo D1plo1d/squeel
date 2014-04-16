@@ -26,7 +26,11 @@ module Squeel
             end
             parent
           else
-            build_without_squeel(associations, parent, join_type)
+            if ::ActiveRecord::VERSION::STRING >= '4.1.0'
+              build_without_squeel(associations, parent)
+            else
+              build_without_squeel(associations, parent, join_type)
+            end
           end
         end
 
