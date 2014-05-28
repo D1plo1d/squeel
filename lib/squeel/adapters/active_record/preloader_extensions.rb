@@ -19,5 +19,3 @@ module Squeel
     end
   end
 end
-
-ActiveRecord::Associations::Preloader.send :include, Squeel::Adapters::ActiveRecord::PreloaderExtensions
